@@ -38,4 +38,10 @@
 	.site-footer{
 		position: relative;
 	}
+
+	.jumbotron-face{
+		padding-top: 40%;
+		background-size: 150%;
+		background-position: center;
+	}
 }
