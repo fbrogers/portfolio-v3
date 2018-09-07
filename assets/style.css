@@ -43,3 +43,18 @@
 		padding-top: 40%;
 	}
 }
+
+@media print{
+    .navbar {
+        display: block;
+        border-width:0 !important;
+    }
+
+    .navar a{
+        color: #000;
+    }
+
+    .mb-3, .mb-4, .mb-5{
+		margin-bottom: 1em !important;
+	}
+}
