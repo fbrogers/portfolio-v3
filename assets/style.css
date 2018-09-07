@@ -1,8 +1,8 @@
 .jumbotron-face{
-	background-image: url('me-06.JPG');
+	background-image: url('bg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position-y: 46%;
+	background-position: 50%;
 	padding-top: 15%;
 	position: relative;
 	border-radius: 0;
@@ -13,7 +13,7 @@
 }
 
 .contact-content{
-	font-size: 1.5em;
+	font-size: 1.25em;
 }
 
 
@@ -41,7 +41,5 @@
 
 	.jumbotron-face{
 		padding-top: 40%;
-		background-size: 150%;
-		background-position: center;
 	}
 }
