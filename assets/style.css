@@ -1,48 +1,49 @@
+/* site content ------------------------------------------------------------ */
+
 .jumbotron-face{
-	background-image: url('bg.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50%;
-	padding-top: 15%;
-	position: relative;
-	border-radius: 0;
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    padding-top: 15%;
+    position: relative;
+    border-radius: 0;
 }
 
 .statement{
-	font-size: 2.5em;
+    font-size: 2.25em;
+}
+
+.site-content{
+    padding-bottom: 3em;
 }
 
 .contact-content{
-	font-size: 1.25em;
+    font-size: 1.25em;
 }
-
-
-/* site content ---------------------------------------------------------------------------------------------------- */
-
-.site-content{
-	padding-bottom: 3em;
-}
-
-/* site footer elements -------------------------------------------------------------------------------------------- */
 
 .site-footer{
-	color: #ccc;
-	padding: 2em 0 1em;
+    color: #ccc;
+    padding: 2em 0 1em;
 }
+
+/* mobile tweaks ----------------------------------------------------------- */
 
 @media (max-width: 576px) {
-	body{
-		margin-bottom: 0
-	}
+    body{
+        margin-bottom: 0
+    }
 
-	.site-footer{
-		position: relative;
-	}
+    .site-footer{
+        position: relative;
+    }
 
-	.jumbotron-face{
-		padding-top: 40%;
-	}
+    .jumbotron-face{
+        padding-top: 40%;
+    }
 }
+
+/* print tweaks ------------------------------------------------------------ */
 
 @media print{
     .navbar {
@@ -55,10 +56,10 @@
     }
 
     .mb-3, .mb-4, .mb-5{
-		margin-bottom: 1em !important;
-	}
+        margin-bottom: 1em !important;
+    }
 
-	.statement{
-		font-size: 2em;
-	}
+    .statement{
+        font-size: 1.75em;
+    }
 }
