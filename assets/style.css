@@ -22,6 +22,11 @@
     font-size: 1.25em;
 }
 
+a.external{
+    padding-right: 1em;
+    background: url('external.png') right center no-repeat;
+}
+
 .site-footer{
     color: #ccc;
     padding: 2em 0 1em;
