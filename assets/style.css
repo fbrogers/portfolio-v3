@@ -49,15 +49,6 @@
     cursor: pointer;
 }
 
-@media (pointer: coarse) and (hover: none) {
-    .intro-video {
-        background-image: url('bg.jpg');
-    }
-    .intro-video video {
-        display: none;
-    }
-}
-
 .statement{
     font-size: 2.25em;
 }
