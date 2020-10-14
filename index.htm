@@ -27,9 +27,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
         $(function(){ 
-            $(".overlay").on("click", function(){
-                $(".overlay").hide();
-                $("#x").show();
+            $("#play-video").on("click", function(){
+                $(".video-hidden").hide();
+                $(".video-playing").show();
                 $("#preroll").hide().trigger("pause");
                 $("#main").show().trigger("play");
             });
@@ -37,9 +37,9 @@
             document.getElementById('main').addEventListener('ended',myHandler,false);
             
             function myHandler(e) {
+                $(".video-hidden").show();
+                $(".video-playing").hide();
                 $("#main").hide().trigger("load");
-                $(".overlay").show();
-                $("#x").hide();
                 $("#preroll").show().trigger("play");
             }
             
@@ -86,26 +86,33 @@
         </nav>
     </header>
     
-    <section class="intro-video d-print-none mb-4">
-        <div class="overlay"></div>
-        <div class="btn btn-dark" id="x">X</div>
+    <section class="intro-video d-print-none mb-5">
+        <div class="overlay video-hidden"></div>
+        <div class="btn btn-dark video-playing" id="x">X</div>
         <video playsinline="playsinline" preload="auto" autoplay loop muted id="preroll">
             <source src="demo-pre.mp4" type="video/mp4">
         </video>
         <video playsinline="playsinline" preload="auto" id="main" style="display: none;" onclick="this.paused ? this.play() : this.pause();">
             <source src="demo.mp4" type="video/mp4">
         </video>
-    </section>
-            
-    <div class="container site-content" id="content">
-        <div class="row">
-            <div class="col-xl-12 col-lg-10 col-md-10 col-sm-12 mx-auto">
-                <div class="statement mb-5 text-center">
-                    Hello! I'm Jordan, and I <b>love</b> helping people make things <b>better</b>.
+        <div class="container h-100 video-hidden">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-light">
+                    <div class="statement text-center">
+                        Hello! I'm Jordan, and I <b>love</b> helping people make things <b>better</b>.
+                    </div>
+                    <hr class="border-default">
+                    <div class="h4">
+                        <a href="#" id="play-video" class="text-light">
+                            <i class="far fa-play-circle"></i> Watch Video
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-                
+    </section>
+            
+    <div class="container site-content" id="content">                
         <div class="row mb-4">
             <div class="col-md-4">
                 <div class="card mb-3">
@@ -360,4 +367,3 @@
     </footer>
 </body>
 </html>
-        
