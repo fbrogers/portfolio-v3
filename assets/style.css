@@ -1,13 +1,61 @@
-/* site content ------------------------------------------------------------ */
-
-.jumbotron-face{
-    background-image: url('bg.jpg');
+.intro-video {
+    position: relative;
+    overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
-    padding-top: 15%;
-    position: relative;
     border-radius: 0;
+    height: calc(100vw * 0.2);
+    min-height: 200px;
+}
+
+.intro-video .btn {
+    z-index: 3;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0.5;
+    display: none;
+}
+
+.intro-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: calc(100vw * 0.2);
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.intro-video .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.0;
+    z-index: 1;
+}
+
+.intro-video .overlay:hover{
+    opacity: 0.1;
+    cursor: pointer;
+}
+
+@media (pointer: coarse) and (hover: none) {
+    .intro-video {
+        background-image: url('bg.jpg');
+    }
+    .intro-video video {
+        display: none;
+    }
 }
 
 .statement{
@@ -32,38 +80,34 @@ a.external{
     padding: 2em 0 1em;
 }
 
-/* mobile tweaks ----------------------------------------------------------- */
-
 @media (max-width: 576px) {
     body{
         margin-bottom: 0
     }
-
+    
     .site-footer{
         position: relative;
     }
-
+    
     .jumbotron-face{
         padding-top: 40%;
     }
 }
-
-/* print tweaks ------------------------------------------------------------ */
 
 @media print{
     .navbar {
         display: block;
         border-width:0 !important;
     }
-
+    
     .navar a{
         color: #000;
     }
-
+    
     .mb-3, .mb-4, .mb-5{
         margin-bottom: 1em !important;
     }
-
+    
     .statement{
         font-size: 1.75em;
     }

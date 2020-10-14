@@ -5,27 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Jordan Rogers</title>
-
+    
     <!--
-    No Photostop! A friend and I hiked to the top of Rough Ridge on the
-    North Carolina Blue Ridge Parkway to take the perfect header photo.
-
-    Making this resume site for myself was special for me! It is a culmination
-    of all of the positive changes in my life in the past few years.
-    I weighed 255 lbs. in 2015 and dropped to 165 by the end of 2018.
-    In that time, I obtained a few certifications, took on new challenges and gained self-confidence.
-
-    I'm ready to apply that can-do, positive attitude to working with you!
+        A friend and I traveled to the top of Rough Ridge on the
+        North Carolina Blue Ridge Parkway to take amazing photos and video.
+        
+        Making this resume site for myself was special for me! It is a culmination
+        of all of the positive changes in my life in the past few years.
+        I weighed 255 lbs. in 2015 and dropped to 165 by the end of 2018.
+        In that time, I obtained a few certifications, took on new challenges and gained self-confidence.
+        
+        I'm ready to apply that can-do, positive attitude to working with you!
     -->
-
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css" />
-
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="assets/scripts.js"></script>
+    <script>
+        $(function(){ 
+            $(".overlay").on("click", function(){
+                $(".overlay").hide();
+                $("#x").show();
+                $("#preroll").hide().trigger("pause");
+                $("#main").show().trigger("play");
+            });
+            
+            document.getElementById('main').addEventListener('ended',myHandler,false);
+            
+            function myHandler(e) {
+                $("#main").hide().trigger("load");
+                $(".overlay").show();
+                $("#x").hide();
+                $("#preroll").show().trigger("play");
+            }
+            
+            $("#x").on("click", function(){
+                myHandler();
+            });
+            
+            $("a.external, a[href$='.pdf']").click(function(e){
+                window.open(this.href);
+                e.preventDefault();
+            });
+        });
+    </script>
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to Main Content</a>
@@ -58,276 +85,286 @@
             </div>
         </nav>
     </header>
-
-    <section class="jumbotron jumbotron-face d-print-none"></section>
-
-    <div class="container site-content" id="content">
-        <div class="row">
-            <div class="col-xl-12 col-lg-10 col-md-10 col-sm-12 mx-auto">
-                <div class="statement mb-5 text-center">
-                    Hello! I'm Jordan, and I love helping people make things better.
-                </div>
-            </div>
-        </div>
-
-        <div class="row mb-4">
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="h3 text-center">
-                            <small><i class="fas fa-chalkboard-teacher"></i></small>
-                            Team Lead
-                        </div>
-                        <hr>
-                        <p>
-                            I'm a servant leader. I've helped teams see the value in Agile and Scrum, adapt at a sustainable pace, and reap the benefits of small commitments, constant planning and refinement. Lifting the team up is my number-one goal.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="h3 text-center">
-                            <small><i class="fas fa-user-tie"></i></small>
-                            Project Manager
-                        </div>
-                        <hr>
-                        <p>
-                            Leveraging my project management interest and skills, I've led Agile teams to success with my thirst for understanding and knowledge sharing. I've prioritized shared backlogs of tens of products and driven Agile adoption in the organization.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="h3 text-center">
-                            <small><i class="fas fa-code"></i></small>
-                            Web Developer
-                        </div>
-                        <hr>
-                        <p>
-                            Experienced in PHP and C#, I've written everything from the smallest script to a multi-area, department-running web application. I have an affinity for clean and consistent UI and attention to detail in finishing and shipping products.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="experiences mb-4" id="experience">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="h1">Experience</div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="mt-2 text-sm-right">
-                        <a href="assets/resume.pdf" class="btn btn-outline-primary">Download (PDF)</a>
-                    </div>
-                </div>
-            </div>
-            <hr>       
-            <div class="job mb-4">
+    
+    <section class="intro-video d-print-none mb-4">
+        <div class="overlay"></div>
+        <div class="btn btn-dark" id="x">X</div>
+        <video playsinline="playsinline" preload="auto" autoplay loop muted id="preroll">
+            <source src="demo-pre.mp4" type="video/mp4">
+            </video>
+            <video playsinline="playsinline" preload="auto" id="main" style="display: none;" onclick="this.paused ? this.play() : this.pause();">
+                <source src="demo.mp4" type="video/mp4">
+                </video>
+            </section>
+            
+            <div class="container site-content" id="content">
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="h6">
-                            <b>UCF Information Technology</b><br>
-                            <i>August 2017&ndash;Present</i>
+                    <div class="col-xl-12 col-lg-10 col-md-10 col-sm-12 mx-auto">
+                        <div class="statement mb-5 text-center">
+                            Hello! I'm Jordan, and I <b>love</b> helping people make things <b>better</b>.
                         </div>
                     </div>
-                    <div class="col-md-9">
-                        <div class="job">
-                            <div class="h3">
-                                Product Owner
+                </div>
+                
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="h3 text-center">
+                                    <small><i class="fas fa-chalkboard-teacher"></i></small>
+                                    Team Lead
+                                </div>
+                                <hr>
+                                <p>
+                                    I'm a servant leader. I've helped teams see the value in Agile and Scrum, adapt at a sustainable pace, and reap the benefits of small commitments, constant planning and refinement. Lifting the team up is my number-one goal.
+                                </p>
                             </div>
-                            <p>
-                                I am the Product Owner for a small Agile team (and a large portfolio), in addition to playing the role of Scrum Master for the team. I assist in the role of Developer for small features, UI enhancements, SQL queries and research, and report creation.
-                            </p>
-                            <ul>
-                                <li>Oversaw portfolio of 40+ custom software products and applications</li>
-                                <li>Developed product visions and a rationality index for all applications</li>
-                                <li>Successfully managed the on-boarding and upgrade of an entire college's applications</li>
-                                <li>Served and assisted Scrum Development Team as part-time Scrum Master</li>
-                                <li>Drove Agile adoption through Scrum practices, rituals, and consistency</li>
-                                <li>Improved team cohesion through retreats, off-campus meetings, and levity</li>
-                                <li>Worked with Product Owners and leadership to develop an application retirement process</li>
-                                <li>Led workshops on Scrum topics including effort estimation and Definition of Done</li>
-                                <li>Proactively championed UI/UX standards for all applications</li>
-                                <li>Utilized Azure DevOps for boards, burndowns, and build/release pipelines</li>
-                            </ul>
                         </div>
                     </div>
-                </div>
-            </div>            
-            <div class="job mb-4">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="h6">
-                            <b>SDES Information Technology</b><br>
-                            <i>March 2013&ndash;August 2017</i>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="job">
-                            <div class="h3">
-                                Web Applications Programmer Manager
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="h3 text-center">
+                                    <small><i class="fas fa-user-tie"></i></small>
+                                    Project Manager
+                                </div>
+                                <hr>
+                                <p>
+                                    Leveraging my project management interest and skills, I've led Agile teams to success with my thirst for understanding and knowledge sharing. I've prioritized shared backlogs of tens of products and driven Agile adoption in the organization.
+                                </p>
                             </div>
-                            <p>
-                                I was promoted to the role of manager in our growing application development department. I also continued to develop web applications and assist with web design tasks.
-                            </p>
-                            <ul>
-                                <li>Managed a diverse team of programmers and coordinated all projects, tasks, and deliverables</li>
-                                <li>Developed 30+ web applications for both internal and external use, primarily in C# MVC</li>
-                                <li>Worked with the Project Management team to develop procedures, workflows, and a ranking rubric</li>
-                                <li>Prepared and delivered presentations to clients, internal teams, and VPs</li>
-                                <li>Proactively developed team standards, policies, and procedures</li>
-                                <li>Primarily worked in Visual Studio, Git, IIS, SQL, and SharePoint</li>
-                            </ul>
                         </div>
                     </div>
-                </div>
-            </div>            
-            <div class="job mb-4">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="h6">
-                            <b>SDES Information Technology</b><br>
-                            <i>December 2008&ndash;March 2013</i>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="job">
-                            <div class="h3">
-                                Web Applications Programmer
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="h3 text-center">
+                                    <small><i class="fas fa-code"></i></small>
+                                    Web Developer
+                                </div>
+                                <hr>
+                                <p>
+                                    Experienced in PHP and C#, I've written everything from the smallest script to a multi-area, department-running web application. I have an affinity for clean and consistent UI and attention to detail in finishing and shipping products.
+                                </p>
                             </div>
-                            <p>
-                                I created and maintained custom web applications in PHP and .NET (C#) for a college IT department. I took the division from having low/no standards and spaghetti strategy to having a single, shared UI and common content and coding standards.
-                            </p>
-                            <ul>
-                                <li>Managed collection of 100+ sites for various departments and teams in IIS</li>
-                                <li>Coordinated division webmasters by creating a shared framework</li>
-                                <li>Designed and developed responsive division-wide web and SharePoint templates</li>
-                                <li>Frequently met clients to turn concepts into business solutions</li>
-                                <li>Primarily worked in Visual Studio, IIS, SQL, and the Adobe Creative Suite</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="educations mb-4" id="education">
-            <div class="h1">Education</div>
-            <hr>
-
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="h4">
-                        Azure Fundamentals (AZ-900)
+                
+                <div class="experiences mb-4" id="experience">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="h1">Experience</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mt-2 text-sm-right">
+                                <a href="assets/resume.pdf" class="btn btn-outline-primary">Download (PDF)</a>
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        <a href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-900" class="external"><b>Microsoft</b></a><br>
-                        <i>September 2020</i>
-                    </p>
+                    <hr>       
+                    <div class="job mb-4">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="h6">
+                                    <b>UCF Information Technology</b><br>
+                                    <i>August 2017&ndash;Present</i>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="job">
+                                    <div class="h3">
+                                        Product Owner
+                                    </div>
+                                    <p>
+                                        I am the Product Owner for a small Agile team (and a large portfolio), in addition to playing the role of Scrum Master for the team. I assist in the role of Developer for small features, UI enhancements, SQL queries and research, and report creation.
+                                    </p>
+                                    <ul>
+                                        <li>Oversaw portfolio of 40+ custom software products and applications</li>
+                                        <li>Developed product visions and a rationality index for all applications</li>
+                                        <li>Successfully managed the on-boarding and upgrade of an entire college's applications</li>
+                                        <li>Served and assisted Scrum Development Team as part-time Scrum Master</li>
+                                        <li>Drove Agile adoption through Scrum practices, rituals, and consistency</li>
+                                        <li>Improved team cohesion through retreats, off-campus meetings, and levity</li>
+                                        <li>Worked with Product Owners and leadership to develop an application retirement process</li>
+                                        <li>Led workshops on Scrum topics including effort estimation and Definition of Done</li>
+                                        <li>Proactively championed UI/UX standards for all applications</li>
+                                        <li>Utilized Azure DevOps for boards, burndowns, and build/release pipelines</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="job mb-4">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="h6">
+                                    <b>SDES Information Technology</b><br>
+                                    <i>March 2013&ndash;August 2017</i>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="job">
+                                    <div class="h3">
+                                        Web Applications Programmer Manager
+                                    </div>
+                                    <p>
+                                        I was promoted to the role of manager in our growing application development department. I also continued to develop web applications and assist with web design tasks.
+                                    </p>
+                                    <ul>
+                                        <li>Managed a diverse team of programmers and coordinated all projects, tasks, and deliverables</li>
+                                        <li>Developed 30+ web applications for both internal and external use, primarily in C# MVC</li>
+                                        <li>Worked with the Project Management team to develop procedures, workflows, and a ranking rubric</li>
+                                        <li>Prepared and delivered presentations to clients, internal teams, and VPs</li>
+                                        <li>Proactively developed team standards, policies, and procedures</li>
+                                        <li>Primarily worked in Visual Studio, Git, IIS, SQL, and SharePoint</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="job mb-4">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="h6">
+                                    <b>SDES Information Technology</b><br>
+                                    <i>December 2008&ndash;March 2013</i>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="job">
+                                    <div class="h3">
+                                        Web Applications Programmer
+                                    </div>
+                                    <p>
+                                        I created and maintained custom web applications in PHP and .NET (C#) for a college IT department. I took the division from having low/no standards and spaghetti strategy to having a single, shared UI and common content and coding standards.
+                                    </p>
+                                    <ul>
+                                        <li>Managed collection of 100+ sites for various departments and teams in IIS</li>
+                                        <li>Coordinated division webmasters by creating a shared framework</li>
+                                        <li>Designed and developed responsive division-wide web and SharePoint templates</li>
+                                        <li>Frequently met clients to turn concepts into business solutions</li>
+                                        <li>Primarily worked in Visual Studio, IIS, SQL, and the Adobe Creative Suite</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <div class="h4">
-                        Agile Certified Practitioner (PMI-ACP)
-                    </div>
-                    <p>
-                        <a href="https://www.pmi.org/certifications/types/agile-acp" class="external"><b>Project Management Institute</b></a><br>
-                        <i>June 2020</i>
-                    </p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="h4">
-                        Certified Scrum Product Owner (CSPO)
-                    </div>
-                    <p>
-                        <a href="https://www.scrumalliance.org/get-certified/product-owner-track/certified-scrum-product-owner" class="external"><b>Scrum Alliance</b></a><br>
-                        <i>November 2017</i>
-                    </p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="h4">
-                        Certified ScrumMaster (CSM)
-                    </div>
-                    <p>
-                        <a href="https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster" class="external"><b>Scrum Alliance</b></a><br>
-                        <i>November 2017</i>
-                    </p>
-                </div>                <div class="col-md-6 mb-3">
-                    <div class="h4">
-                        Project Management Professional (PMP)
-                    </div>
-                    <p>
-                        <a href="https://www.pmi.org/certifications/types/project-management-pmp" class="external"><b>Project Management Institute</b></a><br>
-                        <i>November 2016</i>
-                    </p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="h4">
-                        ITIL Foundations
-                    </div>
-                    <p>
-                        <a href="https://www.axelos.com/certifications/itil-certifications/itil-foundation-level" class="external"><b>AXELOS</b></a><br>
-                        <i>March 2016</i>
-                    </p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="h4">
-                        Digital Media, B.A.
-                    </div>
-                    <p>
-                        <a href="https://www.ucf.edu/" class="external"><b>University of Central Florida</b></a><br>
-                        <i>August 2005&ndash;May 2008</i>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mb-4">
-            <div class="col-md-6 mb-3">
-                <div id="contact">
-                    <div class="h1">Contact Me</div>
+                
+                <div class="educations mb-4" id="education">
+                    <div class="h1">Education</div>
                     <hr>
-                    <p class="contact-content">
-                        <i class="fas fa-phone"></i> 407-324-6005
-                        <br>
-                        <i class="fas fa-envelope"></i> firstbornrogers@icloud
-                    </p>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="h4">
+                                Azure Fundamentals (AZ-900)
+                            </div>
+                            <p>
+                                <a href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-900" class="external"><b>Microsoft</b></a><br>
+                                <i>September 2020</i>
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="h4">
+                                Agile Certified Practitioner (PMI-ACP)
+                            </div>
+                            <p>
+                                <a href="https://www.pmi.org/certifications/types/agile-acp" class="external"><b>Project Management Institute</b></a><br>
+                                <i>June 2020</i>
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="h4">
+                                Certified Scrum Product Owner (CSPO)
+                            </div>
+                            <p>
+                                <a href="https://www.scrumalliance.org/get-certified/product-owner-track/certified-scrum-product-owner" class="external"><b>Scrum Alliance</b></a><br>
+                                <i>November 2017</i>
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="h4">
+                                Certified ScrumMaster (CSM)
+                            </div>
+                            <p>
+                                <a href="https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster" class="external"><b>Scrum Alliance</b></a><br>
+                                <i>November 2017</i>
+                            </p>
+                        </div>                <div class="col-md-6 mb-3">
+                            <div class="h4">
+                                Project Management Professional (PMP)
+                            </div>
+                            <p>
+                                <a href="https://www.pmi.org/certifications/types/project-management-pmp" class="external"><b>Project Management Institute</b></a><br>
+                                <i>November 2016</i>
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="h4">
+                                ITIL Foundations
+                            </div>
+                            <p>
+                                <a href="https://www.axelos.com/certifications/itil-certifications/itil-foundation-level" class="external"><b>AXELOS</b></a><br>
+                                <i>March 2016</i>
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="h4">
+                                Digital Media, B.A.
+                            </div>
+                            <p>
+                                <a href="https://www.ucf.edu/" class="external"><b>University of Central Florida</b></a><br>
+                                <i>August 2005&ndash;May 2008</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3">
+                        <div id="contact">
+                            <div class="h1">Contact Me</div>
+                            <hr>
+                            <p class="contact-content">
+                                <i class="fas fa-phone"></i> 407-324-6005
+                                <br>
+                                <i class="fas fa-envelope"></i> firstbornrogers@icloud
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div id="contact">
+                            <div class="h1">Find Me</div>
+                            <hr>
+                            <p class="contact-content">
+                                <a href="https://www.linkedin.com/in/jordanrogers/" class="external"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                                <br>
+                                <a href="https://github.com/fbrogers/" class="external"><i class="fab fa-github-alt"></i> GitHub</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 mb-3">
-                <div id="contact">
-                    <div class="h1">Find Me</div>
-                    <hr>
-                    <p class="contact-content">
-                        <a href="https://www.linkedin.com/in/jordanrogers/" class="external"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                        <br>
-                        <a href="https://github.com/fbrogers/" class="external"><i class="fab fa-github-alt"></i> GitHub</a>
+            
+            <footer class="site-footer bg-dark d-print-none">
+                <div class="container">
+                    <p>
+                        &copy; 2020 Jordan Rogers &bull; Built Using 
+                        <a href="https://getbootstrap.com/docs/4.0/" class="text-light">Bootstrap</a>
+                        and <a href="https://fontawesome.com/" class="text-light">Font Awesome</a>
+                        <small><i class="fas fa-heart"></i></small>
                     </p>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="site-footer bg-dark d-print-none">
-        <div class="container">
-            <p>
-                &copy; 2020 Jordan Rogers &bull; Built Using 
-                <a href="https://getbootstrap.com/docs/4.0/" class="text-light">Bootstrap</a>
-                and <a href="https://fontawesome.com/" class="text-light">Font Awesome</a>
-                <small><i class="fas fa-heart"></i></small>
-            </p>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
-    <script type="text/javascript">
-        $(".navbar-nav").onePageNav({
-            currentClass: "active"
-        });
-    </script>
-</body>
-</html>
+            </footer>
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+            <script type="text/javascript">
+                $(".navbar-nav").onePageNav({
+                    currentClass: "active"
+                });
+            </script>
+        </body>
+        </html>
+        
