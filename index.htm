@@ -86,9 +86,9 @@
         </nav>
     </header>
     
-    <section class="intro-video d-print-none mb-5">
+    <section class="intro-video d-print-none mb-4">
         <div class="overlay video-hidden"></div>
-        <div class="btn btn-dark video-playing" id="x">X</div>
+        <div class="btn btn-dark btn-close video-playing" id="x">X</div>
         <video playsinline="playsinline" preload="auto" autoplay loop muted id="preroll">
             <source src="demo-pre.mp4" type="video/mp4">
         </video>
@@ -96,15 +96,11 @@
             <source src="demo.mp4" type="video/mp4">
         </video>
         <div class="container h-100 video-hidden">
-            <div class="d-flex h-100 text-center align-items-center">
-                <div class="w-100 text-light">
-                    <div class="statement text-center">
-                        Hello! I'm Jordan, and I <b>love</b> helping people make things <b>better</b>.
-                    </div>
-                    <hr class="border-default">
-                    <div class="h4">
-                        <a href="#" id="play-video" class="text-light">
-                            <i class="far fa-play-circle"></i> Watch Video
+            <div class="d-flex h-75 align-items-end mt-3">
+                <div class="w-100">
+                    <div class="statement video-link text-center">
+                        <a href="#" id="play-video" class="text-light p-3">
+                            <i class="fas fa-play-circle"></i> View
                         </a>
                     </div>
                 </div>
@@ -112,7 +108,15 @@
         </div>
     </section>
             
-    <div class="container site-content" id="content">                
+    <div class="container site-content" id="content">
+        <div class="row">
+            <div class="col-xl-12 col-lg-10 col-md-10 col-sm-12 mx-auto">
+                <div class="statement mb-5 text-center">
+                    Hello! I'm Jordan, and I <b>love</b> helping people make things <b>better</b>.
+                </div>
+            </div>
+        </div>
+              
         <div class="row mb-4">
             <div class="col-md-4">
                 <div class="card mb-3">
