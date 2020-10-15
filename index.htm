@@ -34,9 +34,9 @@
                 $("#main").show().trigger("play");
             });
             
-            document.getElementById('main').addEventListener('ended',myHandler,false);
+            document.getElementById('main').addEventListener('ended', videoOffline, false);
             
-            function myHandler(e) {
+            function videoOffline(e) {
                 $(".video-hidden").show();
                 $(".video-playing").hide();
                 $("#main").hide().trigger("load");
@@ -44,7 +44,7 @@
             }
             
             $("#x").on("click", function(){
-                myHandler();
+                videoOffline();
             });
             
             $("a.external, a[href$='.pdf']").click(function(e){
