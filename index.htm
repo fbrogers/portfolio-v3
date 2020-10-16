@@ -88,11 +88,11 @@
     <section class="intro-video d-print-none mb-4">
         <div class="overlay video-hidden"></div>
         <div class="btn btn-dark btn-close video-playing" id="x">X</div>
-        <video playsinline="playsinline" preload="auto" autoplay loop muted id="preroll">
-            <source src="demo-pre.mp4" type="video/mp4">
+        <video id="preroll" preload="auto" poster="assets/poster-pre.jpg" playsinline="playsinline" autoplay loop muted>
+            <source src="assets/pre.mp4" type="video/mp4">
         </video>
-        <video playsinline="playsinline" preload="auto" id="main" style="display: none;" onclick="this.paused ? this.play() : this.pause();">
-            <source src="demo.mp4" type="video/mp4">
+        <video id="main" preload="auto" poster="assets/poster-main.jpg" playsinline="playsinline" style="display: none;" onclick="this.paused ? this.play() : this.pause();">
+            <source src="assets/main.mp4" type="video/mp4">
         </video>
         <div class="container h-100 video-hidden">
             <div class="d-flex h-75 align-items-end mt-2">
