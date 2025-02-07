@@ -80,6 +80,10 @@ a.external{
     padding: 2em 0 1em;
 }
 
+small{
+    font-size: 0.667em;
+}
+
 @media (max-width: 1200px) {
     .statement{
         font-size: 1.67em;
