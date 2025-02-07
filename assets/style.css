@@ -1,3 +1,14 @@
+body{
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.pitch, .pitch .lead{
+    font-size: 1.2em;
+}
+
 .intro-video {
     position: relative;
     overflow: hidden;
@@ -55,11 +66,7 @@
 }
 
 .statement{
-    font-size: 2.25em;
-}
-
-.statement a{
-    text-decoration: none;
+    font-size: 2em;
 }
 
 .site-content{
@@ -84,33 +91,11 @@ small{
     font-size: 0.667em;
 }
 
-@media (max-width: 1200px) {
-    .statement{
-        font-size: 1.67em;
-    }
-}
-
-@media (max-width: 992px) {
-    .statement{
-        font-size: 1.67em;
-    }
-}
-
-@media (max-width: 768px) {
-    .statement{
-        font-size: 1.5em;
-    }
-}
-
 @media (max-width: 576px) {
     body{
         margin-bottom: 0
     }
-    
-    .statement{
-        font-size: 1.5em;
-    }
-
+        
     .site-footer{
         position: relative;
     }
